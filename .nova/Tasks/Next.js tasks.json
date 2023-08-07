@@ -1,0 +1,28 @@
+{
+  "actions" : {
+    "build" : {
+      "postActions" : [
+        {
+          "script" : "#!\/bin\/sh\nnpm run build",
+          "type" : "runScript"
+        }
+      ]
+    },
+    "clean" : {
+      "postActions" : [
+        {
+          "script" : "#!\/bin\/sh\nnpm run lint",
+          "type" : "runScript"
+        }
+      ]
+    },
+    "run" : {
+      "postActions" : [
+        {
+          "script" : "#!\/bin\/sh\nnpm run dev",
+          "type" : "runScript"
+        }
+      ]
+    }
+  }
+}
