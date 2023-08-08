@@ -15,4 +15,5 @@ model Post {
   title     String
   content   Json?
   published Boolean @default(false)
+  userId    String
 }
