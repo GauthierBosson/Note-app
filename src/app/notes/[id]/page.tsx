@@ -1,5 +1,5 @@
 import Editor from '@/components/editor'
-import { db } from '../../../../lib/db'
+import { db } from '../../../lib/db'
 
 async function getData(id: string) {
   try {

@@ -1,5 +1,6 @@
 import type { NextAuthOptions } from 'next-auth'
 import GithubProvider from 'next-auth/providers/github'
+import { getServerSession } from 'next-auth'
 
 export const authOptions: NextAuthOptions = {
   providers: [
@@ -24,4 +25,14 @@ export const authOptions: NextAuthOptions = {
       return token
     },
   },
+}
+
+export const getCurrentUser = async () => {
+  const session = await getServerSession(authOptions)
+
+  if (!session) {
+    return undefined
+  }
+
+  return session.user
 }
