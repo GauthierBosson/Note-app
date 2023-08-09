@@ -1,6 +1,5 @@
 import { authOptions } from '@/lib/auth'
 import NextAuth from 'next-auth'
-import GithubProvider from 'next-auth/providers/github'
 
 const handler = NextAuth(authOptions)
 

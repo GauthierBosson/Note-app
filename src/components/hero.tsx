@@ -1,7 +1,7 @@
 import Container from '@/components/container'
 import { Button } from './ui/button'
 import Link from 'next/link'
-import { Avatar, AvatarImage, AvatarFallback } from './ui/avatar'
+import UserStatus from './user-status'
 import { getCurrentUser } from '@/lib/auth'
 
 export default async function Hero() {
@@ -12,20 +12,7 @@ export default async function Hero() {
       <Container>
         <nav className='flex justify-between items-center py-4'>
           <div>Note app</div>
-          <div>
-            {user ? (
-              <Link href={'/dashboard'}>
-                <Avatar>
-                  <AvatarImage src='' />
-                  <AvatarFallback>GB</AvatarFallback>
-                </Avatar>
-              </Link>
-            ) : (
-              <Button asChild>
-                <Link href={'/login'}>Login</Link>
-              </Button>
-            )}
-          </div>
+          <UserStatus user={user} />
         </nav>
         <div className='py-40'>
           <h1 className='text-7xl font-bold'>
