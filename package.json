@@ -13,8 +13,10 @@
     "@editorjs/header": "^2.7.0",
     "@editorjs/link": "^2.5.0",
     "@prisma/client": "^5.1.1",
+    "@radix-ui/react-avatar": "^1.0.3",
     "@radix-ui/react-slot": "^1.0.2",
     "@radix-ui/react-toast": "^1.1.4",
+    "@splinetool/react-spline": "^2.2.6",
     "@types/node": "20.4.5",
     "@types/react": "18.2.18",
     "@types/react-dom": "18.2.7",
@@ -39,6 +41,7 @@
     "zod": "^3.21.4"
   },
   "devDependencies": {
+    "@tailwindcss/typography": "^0.5.9",
     "@types/editorjs__header": "^2.6.0",
     "editorjs-drag-drop": "^1.1.13",
     "eslint-config-prettier": "^8.9.0",

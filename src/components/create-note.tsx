@@ -20,6 +20,7 @@ export default function CreateNote({ userId }: { userId: string }) {
         }),
       }).then(async (res) => {
         const data: Post = await res.json()
+        // revalidate data for dashboard
         router.refresh()
         router.push(`/notes/${data.id}`)
       })
