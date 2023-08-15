@@ -11,9 +11,18 @@ datasource db {
 }
 
 model Post {
-  id        Int     @id @default(autoincrement())
-  title     String
-  content   Json?
-  published Boolean @default(false)
-  userId    String
+  id            Int      @id @default(autoincrement())
+  title         String
+  content       Json?
+  publishedDate DateTime @default(now())
+  userId        String
+  sharedWith    String[]
+}
+
+model User {
+  id       Int     @id @default(autoincrement())
+  username String  @db.VarChar(50)
+  password String
+  email    String  @unique
+  Image    String?
 }
