@@ -112,13 +112,18 @@ export default function Editor({ post }: { post: Post }) {
   }
 
   return (
-    <form onSubmit={handleSubmit(updateNote)}>
+    <form className='w-[70%]' onSubmit={handleSubmit(updateNote)}>
       <TextareaAutoSize
+        className='w-full text-4xl'
+        style={{ resize: 'none' }}
         placeholder='Choose a title'
         defaultValue={post.title}
         {...register('title', { required: true })}
       />
-      <div id='editor' className='w-full h-[500px]' />
+      <div
+        id='editor'
+        className='w-full min-h-[500px] prose prose-h2:font-normal'
+      />
       <Button type='submit'>Save</Button>
       <Button onClick={() => deleteNote()} variant='destructive'>
         Delete note

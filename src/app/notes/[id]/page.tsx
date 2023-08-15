@@ -1,5 +1,6 @@
 import Editor from '@/components/editor'
 import { db } from '../../../lib/db'
+import Container from '@/components/container'
 
 async function getData(id: string) {
   try {
@@ -27,10 +28,8 @@ export default async function NotesPage({
   }
 
   return (
-    <div className='flex'>
-      <div className='inline-flex grow p-4'>
+    <Container className='flex justify-center grow'>
         <Editor post={post} />
-      </div>
-    </div>
+    </Container>
   )
 }

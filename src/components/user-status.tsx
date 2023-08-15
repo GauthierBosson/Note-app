@@ -6,6 +6,7 @@ import { Popover, PopoverContent, PopoverTrigger } from './ui/popover'
 import { Button } from './ui/button'
 import Link from 'next/link'
 import { signOut } from 'next-auth/react'
+import { Separator } from './ui/separator'
 
 export default function UserStatus({
   user,
@@ -22,11 +23,16 @@ export default function UserStatus({
         <Popover>
           <PopoverTrigger>
             <Avatar>
-              <AvatarImage src='' />
-              <AvatarFallback>GB</AvatarFallback>
+              <AvatarImage src={user.image!} />
+              <AvatarFallback></AvatarFallback>
             </Avatar>
           </PopoverTrigger>
-          <PopoverContent>
+          <PopoverContent className='flex flex-col items-start px-0'>
+            <p className='px-2 pb-2'>{user.email}</p>
+            <Separator />
+            <Button asChild variant={'link'}>
+              <Link href={'/dashboard'}>Dashboard</Link>
+            </Button>
             <Button variant={'link'} onClick={() => signOut()}>
               Sign out
             </Button>

@@ -29,5 +29,5 @@ export default function CreateNote({ userId }: { userId: string }) {
     }
   }
 
-  return <Button onClick={() => createNote()}>Add a note</Button>
+  return <Button onClick={() => createNote()}>New note</Button>
 }
